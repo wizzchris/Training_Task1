@@ -9,7 +9,7 @@ app.set('view engine', 'pug');
 app.set('views','./views');
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  res.render('home')
 });
 
 app.get('/database', function(req, res){
@@ -47,6 +47,22 @@ app.get("/getdetails", function (req, res) {
     res.render('index',{users:users});
 })
 });
+
+app.get('/find', function(req, res){
+   res.render('find');
+});
+
+app.post("/find", (req, res) => {
+ var myData2 = req.body.sfirstName;
+ User.find({firstName: myData2}, function(err, users) {
+ if (err) throw err;
+ console.log(myData2)
+ // object of all the users
+ res.render('search',{users:users});
+})
+});
+
+
 app.listen(3000, function() {
   console.log('App listening on port 3000!');
 });
