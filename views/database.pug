@@ -11,9 +11,10 @@ html
           }
    body
      h1 Hello Welcome To The Name Database!
-     form(method='post')
-         label(for='first_name') Enter First name:
-         input#first_name(type='text' name='name_field' value='first name.')
-         label(for='last_name') Enter Last name:
-         input#last_name(type='text' name='name_field' value='last name.')
-         input(type='submit' value='OK')
+     form(method='post' action='/addname')
+       label Enter Your Name
+       br
+       input(type='text' name='firstName' placeholder='Enter first name...' required='')
+       input(type='text' name='lastName' placeholder='Enter last name...' required='')
+       input(type='submit' value='Add Name')
+     h1 Hope You Have Fun!
