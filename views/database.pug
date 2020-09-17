@@ -1,6 +1,19 @@
 doctype html
 html
    head
-      title = "Hello Pug"
+      title = "Hello Welcome To The Name Database!"
+      style.
+          body {
+              font-family: Verdana;
+              font-size: 17px;
+              background: #C270F5;
+              text-align:center;
+          }
    body
-      p.greetings#people Hello World!
+     h1 Hello Welcome To The Name Database!
+     form(method='post')
+         label(for='first_name') Enter First name:
+         input#first_name(type='text' name='name_field' value='first name.')
+         label(for='last_name') Enter Last name:
+         input#last_name(type='text' name='name_field' value='last name.')
+         input(type='submit' value='OK')
