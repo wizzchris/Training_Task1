@@ -20,7 +20,8 @@ mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/my
 
 var nameSchema = new mongoose.Schema({
  firstName: String,
- lastName: String
+ lastName: String,
+ email: String,
 });
 
 var User = mongoose.model("User", nameSchema, "ths");
