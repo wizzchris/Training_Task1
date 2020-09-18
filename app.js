@@ -43,7 +43,6 @@ app.post("/database", (req, res) => {
 app.get("/getdetails", function (req, res) {
     User.find({}, function(err, users) {
     if (err) throw err;
-    // object of all the users
     res.render('index',{users:users});
 })
 });
@@ -57,7 +56,6 @@ app.post("/find", (req, res) => {
  User.find({firstName: myData2}, function(err, users) {
  if (err) throw err;
  console.log(myData2)
- // object of all the users
  res.render('search',{users:users});
 })
 });
